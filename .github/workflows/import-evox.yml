@@ -26,15 +26,15 @@ jobs:
           git read-tree --reset -u FETCH_HEAD
           git checkout HEAD -- .github/workflows/import-evox.yml
           cat > MISTOS_PORT.md <<'EOF'
-# MistOS Android 17 — Pixel 4 XL (kernel)
-
-Base: its-hecker/evox-coral-kernel, main.
-
-Preserves floral 4.14 kernel sources and the KernelSU Next KernelSU gitlink.
-After repo sync, update the KernelSU submodule using git submodule update --init --recursive.
-
-This source import is not an on-device hardware verification.
-EOF
+          # MistOS Android 17 — Pixel 4 XL (kernel)
+          
+          Base: its-hecker/evox-coral-kernel, main.
+          
+          Preserves floral Linux 4.14 sources and KernelSU Next Git submodule.
+          After repo sync run git submodule update --init --recursive.
+          
+          This source import is not an on-device hardware verification.
+          EOF
           git add -A
           git commit -m "Hecker: import EvoX coral kernel for MistOS 17"
           git push origin HEAD:main
